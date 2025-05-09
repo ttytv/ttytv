@@ -1,0 +1,5 @@
+/*!
+ * Copyright 2016-2018 http://v.shoutu.cn
+ * Email 726662013@qq.com,admin@shoutu.cn
+ */
+$(document).ready(function($){var recente=$.cookie("recente"),len=0,canadd=!0;if(recente&&(recente=eval("("+recente+")"),len=recente.length,$(recente).each(function(){var t;if(vod_name==this.vod_name)return canadd=!1,t="[",$(recente).each(function(e){var n,r,o=this.vod_name==vod_name?(n=vod_name,r=vod_url,vod_part):(n=this.vod_name,r=this.vod_url,this.vod_part);t+='{"vod_name":"'+n+'","vod_url":"'+r+'","vod_part":"'+o+'"}',e!=len-1&&(t+=",")}),t+="]",$.cookie("recente",t,{path:"/",expires:2}),!1})),canadd){var json="[",start=0,isfirst="]",isfirst=len?",":"]";for(json+='{"vod_name":"'+vod_name+'","vod_url":"'+vod_url+'","vod_part":"'+vod_part+'"}'+isfirst,9<len&&--len,i=0;i<len-1;i++)json+='{"vod_name":"'+recente[i].vod_name+'","vod_url":"'+recente[i].vod_url+'","vod_part":"'+recente[i].vod_part+'"},';0<len&&(json+='{"vod_name":"'+recente[len-1].vod_name+'","vod_url":"'+recente[len-1].vod_url+'","vod_part":"'+recente[len-1].vod_part+'"}]'),$.cookie("recente",json,{path:"/",expires:2})}});
